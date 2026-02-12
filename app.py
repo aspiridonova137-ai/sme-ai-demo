@@ -57,10 +57,12 @@ async function ask() {
 
 @app.post("/ask")
 def ask(req: AskRequest):
-  return get_rag().answer(req.question, top_k=req.top_k)
+rag = RAGAssistant(faq_path="faq.txt", index_path="/tmp/embeddings.json")
+
 
 
 @app.get("/health")
 def health():
     return {"status": "ok"}
+
 
