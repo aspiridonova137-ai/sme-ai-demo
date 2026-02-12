@@ -1,0 +1,14 @@
+Q: What is the safest way to start using AI in a small business?
+A: Start with low-risk internal use cases (summaries, drafts, classification). Avoid sensitive customer data at first. Define a policy: what data is allowed, who approves tools, and where outputs are stored.
+
+Q: How do we choose the first AI use case?
+A: Pick one process with high repetition and clear pain: customer support triage, document summarization, lead qualification, internal knowledge search. The best first case saves time weekly and has simple success metrics.
+
+Q: What are typical risks of AI adoption?
+A: Data leakage, inconsistent quality, hallucinations, unclear ownership, and tool sprawl. Mitigate with access control, “sources required” workflows, human review for critical tasks, and a single approved tool stack.
+
+Q: Do we need a vector database to start?
+A: Not necessarily. For a small knowledge base you can store embeddings locally (JSON) and do similarity search. Vector DB becomes useful when content grows or you need multi-user, real-time updates, and governance.
+
+Q: How do we measure ROI for AI automation?
+A: Track baseline time/cost per task, error rate, and cycle time. Compare before/after. A good first KPI is hours saved per week and reduction in response time or manual rework.
