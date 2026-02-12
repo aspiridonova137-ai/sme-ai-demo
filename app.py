@@ -8,7 +8,14 @@ from rag_core import RAGAssistant
 load_dotenv()
 
 app = FastAPI(title="SME AI Adoption Assistant (RAG)")
-rag = RAGAssistant(faq_path="faq.txt", index_path="embeddings.json")
+rag = None
+
+def get_rag():
+    global rag
+    if rag is None:
+        rag = RAGAssistant(faq_path="faq.txt", index_path="embeddings.json")
+    return rag
+
 
 class AskRequest(BaseModel):
     question: str
@@ -50,8 +57,10 @@ async function ask() {
 
 @app.post("/ask")
 def ask(req: AskRequest):
-    return rag.answer(req.question, top_k=req.top_k)
+  return get_rag().answer(req.question, top_k=req.top_k)
+
 
 @app.get("/health")
 def health():
     return {"status": "ok"}
+
